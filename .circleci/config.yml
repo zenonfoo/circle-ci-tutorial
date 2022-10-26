@@ -6,6 +6,8 @@ orbs:
 jobs:
   build-and-test:
     executor: python/default
+    environment:
+      PYTHONPATH=./tests
     steps:
       - checkout
       - python/test
