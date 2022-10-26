@@ -6,12 +6,12 @@ orbs:
 jobs:
   build-and-test:
     executor: python/default
-    environment:
-      PYTHONPATH=./tests
     steps:
       - checkout
-      - python/test
-
+      - run:
+          name: Run Tests
+          command: python3 -m unittest discover tests
+          
 workflows:
   main:
     jobs:
